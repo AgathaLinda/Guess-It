@@ -1,0 +1,71 @@
+<HEAD>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+  <script type="text/javascript" src="js/game.js"></script>
+  <SCRIPT LANGUAGE="JavaScript" TYPE="text/javascript">
+    $(document).ready(function(){
+        $("#regis").hide();
+        $("#main").show();
+    });
+
+  </SCRIPT>
+</HEAD>
+ 
+<BODY onLoad=stat() onKeyPress=catchKeyCode()>
+    
+    <div id="regis">
+      <form method="POST" action="register.php">
+        <h1>Registrasi</h1>
+        <div>
+          <input type="text" placeholder="Nama" id="nama" name="nama" />
+        </div>
+        <div>
+          <input type="text" placeholder="Nomor HP" required="" id="nohp" name="nohp" />
+        </div>
+        <div>
+          <input type="text" placeholder="Alamat" required="" id="alamat"name="alamat" />
+        </div>
+        <div>
+          <input type="submit" value="Selesai" />
+        </div>
+      </form>    
+    </div>
+
+
+      <div id="main"> 
+        <div id="header">
+          <img src="head.png"><br>
+        </div>
+        <center><h3> Keterangan: <br>1. Untuk membantu menabak judul novel tersebut, kamu bisa buka link <a href="http://andipublisher.com/subkat-15-novel.html">Novel Andi Publisher</a> dari page 1-10. <br>2. Judul novel ini maksimal 2 kata saja loh. Mudah kan??<br></h3> </center><br>
+
+        <div id="contain">
+          <FORM NAME=form1>
+            <TABLE CLASS=tab BORDER=0 BGCOLOR=#FF9900 CELLPADDING=4 CELLSPACING=0>
+              <TR>
+                <TD CLASS=td1>
+                <INPUT TYPE=text SIZE=56 NAME=hint VALUE="Tuliskan judul novel tebakanmu di sini, lalu tekan tombol Tebak!" READONLY CLASS=txt1>
+                </TD>
+              </TR>
+
+              <TR>
+                <TD CLASS=td1>
+                <INPUT TYPE=text NAME=guess1 SIZE=59 CLASS=txt2 TITLE="tebakan user">
+                </TD>
+              </TR>
+
+              <TR>
+                <TD Class=td1 ALIGN=center>
+                 
+                <INPUT TYPE=button VALUE=Tebak! onClick=guessit() CLASS=btn TITLE="hint & guess">
+                 
+                <INPUT TYPE=button VALUE=Bersihkan onClick=clearBox() CLASS=btn TITLE="clear teks ">
+                 
+                <INPUT TYPE=button VALUE=Mulai onClick=newGame() CLASS=btn TITLE="new game">
+                 
+                </TD>
+              </TR>
+            </TABLE>
+          </FORM>
+        </div>
+      </div>
+</BODY>
